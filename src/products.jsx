@@ -18,18 +18,16 @@ function Products() {
             return <>
                 <div key={r.id} className="container text-center">
                     <div className="row">
-                        <div className="col">
                             <div className="card" style={{width: "18rem"}}>
                                 <img src={r.img} className="card-img-top" />
                                 <div className="card-body">
                                     <h3>{r.productsname}</h3>
-                                    <h3>{r.quanity}</h3>
-                                    
+                                    <h5>{r.quanity}</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                
             </>
         })}
     </>

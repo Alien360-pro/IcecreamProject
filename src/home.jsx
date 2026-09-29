@@ -29,6 +29,9 @@ function Home(){
           <li class="nav-item">
             <Link class="nav-link" to="/products">Products</Link>
           </li>
+          <li class="nav-item">
+            <Link to="/signin"><button type="button" class="btn btn-warning">Sign In</button></Link>
+          </li>
         </ul>
         
       </div>

@@ -1,15 +1,38 @@
+import "./contact.css";
 
 function Contact() {
   return (
-    <>
-      <div
-        className="container text-center"
-        style={{ marginTop: "120px" }}
-      >
-        <h1>Contact V.V.K</h1>
+    <div className="contact-page">
 
-        <div className="card shadow p-4 mx-auto mt-4" style={{ maxWidth: "500px" }}>
-          <h3>V.V.K Ice Cream</h3>
+      {/* Left Side */}
+      <div className="side-decoration left-side">
+        <div className="ice-cream">🍦</div>
+        <div className="ice-cream">🍨</div>
+        <div className="ice-cream">🍧</div>
+      </div>
+
+      {/* Main Content */}
+      <div className="contact-content">
+
+        <h1 className="text-center fw-bold text-primary wave-title">
+          <span>C</span>
+          <span>o</span>
+          <span>n</span>
+          <span>t</span>
+          <span>a</span>
+          <span>c</span>
+          <span>t</span>
+          <span>&nbsp;</span>
+          <span>V</span>
+          <span>.</span>
+          <span>V</span>
+          <span>.</span>
+          <span>K</span>
+        </h1>
+
+        <div className="card contact-card shadow p-4 mx-auto mt-4">
+
+          <h3>🍦 V.V.K Ice Cream</h3>
 
           <p>📍 Madurai, Tamil Nadu, India</p>
 
@@ -17,10 +40,24 @@ function Contact() {
 
           <p>📧 vvkisscream@gmail.com</p>
 
-          <p>🕒 10:00 AM - 10:00 PM</p>
+          <p>🕒 10:00 AM - 60:30 PM</p>
+
+          <button className="btn btn-primary contact-btn">
+            Contact Us 🍨
+          </button>
+
         </div>
+
       </div>
-    </>
+
+      {/* Right Side */}
+      <div className="side-decoration right-side">
+        <div className="ice-cream">🍧</div>
+        <div className="ice-cream">🍦</div>
+        <div className="ice-cream">🍨</div>
+      </div>
+
+    </div>
   );
 }
 
