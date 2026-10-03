@@ -3,34 +3,40 @@ import logo from './assets/logo.png'
 function Home(){
 
     return <>
-        <nav class="navbar bg-body-tertiary fixed-top">
-  <div class="container-fluid">
+        <nav className="navbar bg-body-tertiary fixed-top">
+  <div className="container-fluid">
     {/* <h1 class="navbar-brand" href="#" style={{fontStyle:"italic"}}>V.V.K</h1> */}
     <a href="/"><img src={logo} alt="logo" width={100} height={100} /></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <li className="nav-item" type="none">
+            <Link to="/signin"><button type="button" class="btn btn-warning">Sign In</button></Link>
+          </li>
+          <li className="nav-item" type="none">
+            <Link to="/viewcart"><button type="button" class="btn btn-warning">View To Cart</button></Link>
+          </li>
+    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
     </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">V.V.K</h5>
+    <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div className="offcanvas-header">
+        <h5 className="offcanvas-title" id="offcanvasNavbarLabel">V.V.K</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <Link class="nav-link" aria-current="page" to="/" >Home</Link>
+      <div className="offcanvas-body">
+        <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li className="nav-item">
+            <Link className="nav-link" aria-current="page" to="/" >Home</Link>
           </li>
-          <li class="nav-item">
-            <Link class="nav-link" to="/about">About</Link>
+          <li className="nav-item">
+            <Link className="nav-link" to="/about">About</Link>
           </li>
-          <li class="nav-item">
-            <Link class="nav-link" to="/contact">Contact</Link>
+          <li className="nav-item">
+            <Link className="nav-link" to="/contact">Contact</Link>
           </li>
-          <li class="nav-item">
-            <Link class="nav-link" to="/products">Products</Link>
+          <li className="nav-item">
+            <Link className="nav-link" to="/products">Products</Link>
           </li>
-          <li class="nav-item">
-            <Link to="/signin"><button type="button" class="btn btn-warning">Sign In</button></Link>
+          <li className="nav-item">
+            <Link to="/signin"><button type="button" className="btn btn-warning">Sign In</button></Link>
           </li>
         </ul>
         

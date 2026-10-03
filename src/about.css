@@ -1,6 +1,6 @@
 
 .about-page {
-  min-height: 100vh;
+  max-height: 100vh;
   padding: 100px 20px;
   background: #fff8f0;
   display: flex;

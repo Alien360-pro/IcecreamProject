@@ -1,16 +1,19 @@
 import axios from "axios"
 import { useState } from "react"
+import './signin.css'
 
 function Signin() {
     let [data, setdata] = useState({
         name: "",
         phone: "",
-        email: ""
+        email: "",
+        address:""
     })
     let [name, setname] = useState(false)
     let [cond1, setcond1] = useState(false)
     let [phone, setphone] = useState(false)
     let [email, setemail] = useState(false)
+    let [address, setaddress] = useState(false)
     let [sumbit ,setsumbit] = useState("")
     let set = (event) => {
         setdata({ ...data, [event.target.name]: event.target.value })
@@ -22,6 +25,9 @@ function Signin() {
         }
         if (event.target.name == "email") {
             setemail(false)
+        }
+        if (event.target.name == "address") {
+            setaddress(false)
         }
     }
     function chech() {
@@ -40,19 +46,22 @@ function Signin() {
         }else{
             setemail(false)
         }
-        if (data.name != "" && data.phone != "" && data.email != "" ) {
-            setcond1(true)
-        } else {
-            setcond1(false)
+        if(data.address == ""){
+            setaddress(true)
+        }else{
+            setaddress(false)
         }
-    }
-    let set1 = ()=>{
-        axios.post("http://localhost:3000/signin" , data)
+        if (data.name != "" && 
+            data.phone != "" && 
+            data.email != "" && 
+            data.address != "" ) {
+                axios.post("http://localhost:3000/signin" , data)
         .then((Response)=> {console.log(Response.data)
             setdata({
                 name: "",
                 phone: "",
-                email: ""
+                email: "",
+                address:""
             })
             setsumbit("Sumbit Succesfully")
             setInterval(() => {
@@ -60,27 +69,33 @@ function Signin() {
             }, 2000);
         })
         .catch((err)=>console.log(err))
+            setcond1(true)
+        } else {
+            setcond1(false)
+        }
+
+        
     }
+  
 
     return <div>
         <h1>SignIn From</h1>
         Name:- <input type="text" name="name" value={data.name} onChange={set} />
         <p style={{ color: "red" }}>{name && "Please Fill The Details"}</p>
         <br />
-        Phone:- <input type="number" name="phone" value={data.phone} onChange={set} />
+        Phone:- <input type="tele" name="phone" value={data.phone} onChange={set} />
         <p style={{ color: "red" }}>{phone && "Please Fill The Details"}</p>
         <br />
         Email:- <input type="email" name="email" value={data.email} onChange={set} />
         <p style={{ color: "red" }}>{email && "Please Fill The Details"}</p>
         <br />
+        Address:- <input type="text" name="address" value={data.address} onChange={set} />
+        <p style={{ color: "red" }}>{address && "Please Fill The Details"}</p>
+        <br />
         <button onClick={chech}>Sumbit</button>
-        <div style={{ visibility: cond1 ? "visible" : "hidden" }}>
-            <h2>Your Details</h2>
-            <button onClick={set1}>Sumbit</button>
-            <br />
             {sumbit}
         </div>
-    </div>
+     
 }
 export default Signin
 
