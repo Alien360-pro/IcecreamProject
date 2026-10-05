@@ -7,6 +7,7 @@ import Signin from './signin'
 import View from './view'
 import Cart from './cart'
 import Viewcart from './viewcart'
+import Buynow from './buynow'
 function App() {
 
 
@@ -27,7 +28,9 @@ function App() {
           <Route path='/signin' element={<Signin/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/viewcart' element={<Viewcart/>}/>
+          <Route path='/buynow' element={<Buynow/>}/>
       </Routes>
+      
     </>
   )
 }
