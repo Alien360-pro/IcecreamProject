@@ -14,7 +14,7 @@ function App() {
   return (
     <>
     <Home/>
-    <br />
+    <br />  
     <br />
     <br />
     <br />
@@ -28,7 +28,7 @@ function App() {
           <Route path='/signin' element={<Signin/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/viewcart' element={<Viewcart/>}/>
-          <Route path='/buynow' element={<Buynow/>}/>
+          <Route path='/buynow/:id' element={<Buynow/>}/>
       </Routes>
       
     </>

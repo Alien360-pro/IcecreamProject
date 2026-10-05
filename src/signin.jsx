@@ -78,23 +78,126 @@ function Signin() {
     }
   
 
-    return <div>
-        <h1>SignIn From</h1>
-        Name:- <input type="text" name="name" value={data.name} onChange={set} />
-        <p style={{ color: "red" }}>{name && "Please Fill The Details"}</p>
-        <br />
-        Phone:- <input type="tele" name="phone" value={data.phone} onChange={set} />
-        <p style={{ color: "red" }}>{phone && "Please Fill The Details"}</p>
-        <br />
-        Email:- <input type="email" name="email" value={data.email} onChange={set} />
-        <p style={{ color: "red" }}>{email && "Please Fill The Details"}</p>
-        <br />
-        Address:- <input type="text" name="address" value={data.address} onChange={set} />
-        <p style={{ color: "red" }}>{address && "Please Fill The Details"}</p>
-        <br />
-        <button onClick={chech}>Sumbit</button>
-            {sumbit}
+    return <>
+
+             <div className="signin-page">
+
+            <div className="container">
+                <div className="row justify-content-center">
+
+                    <div className="col-md-7 col-lg-6">
+
+                        <div className="signin-card">
+
+                            <div className="signin-header">
+                                <h1 className="text-center">
+                                    SignIn Form
+                                </h1>
+                                <p className="text-center">
+                                    Welcome to V.V.K Ice Cream
+                                </p>
+                            </div>
+
+                            <div className="mb-3">
+                                <label className="form-label">
+                                    Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={data.name}
+                                    onChange={set}
+                                    className="form-control"
+                                    placeholder="Enter your name"
+                                />
+
+                                <p className="error-message">
+                                    {name && "Please Fill The Details"}
+                                </p>
+                            </div>
+
+                            <div className="mb-3">
+                                <label className="form-label">
+                                    Phone
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    value={data.phone}
+                                    onChange={set}
+                                    className="form-control"
+                                    placeholder="Enter your phone number"
+                                />
+
+                                <p className="error-message">
+                                    {phone && "Please Fill The Details"}
+                                </p>
+                            </div>
+
+                            <div className="mb-3">
+                                <label className="form-label">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={data.email}
+                                    onChange={set}
+                                    className="form-control"
+                                    placeholder="Enter your email"
+                                />
+
+                                <p className="error-message">
+                                    {email && "Please Fill The Details"}
+                                </p>
+                            </div>
+
+                            <div className="mb-3">
+                                <label className="form-label">
+                                    Address
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="address"
+                                    value={data.address}
+                                    onChange={set}
+                                    className="form-control"
+                                    placeholder="Enter your address"
+                                />
+
+                                <p className="error-message">
+                                    {address && "Please Fill The Details"}
+                                </p>
+                            </div>
+
+                            <div className="text-center">
+                                <button
+                                    onClick={chech}
+                                    className="btn btn-warning submit-btn"
+                                >
+                                    Sumbit
+                                </button>
+                            </div>
+
+                            {sumbit && (
+                                <div className="alert alert-success success-message">
+                                    {sumbit}
+                                </div>
+                            )}
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
         </div>
+    </>
      
 }
 export default Signin

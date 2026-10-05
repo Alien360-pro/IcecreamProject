@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import './view.css'
 import { useEffect, useState } from "react"
 import axios from "axios"
-import { Link } from "react-router-dom"
+
 
 function View() {
     const { id } = useParams()
@@ -45,7 +45,7 @@ function View() {
             <p>💰 Price: {data.price}</p>
 
             <div className="btn-group" role="group" aria-label="Basic mixed styles example">
-                <Link to="/buynow" onClick={buyNow}  className="btn btn-danger">Buy Now</Link>
+                <button type="button" className="btn btn-danger" onClick={buyNow}>Buy Now</button>
                 <button type="button" className="btn btn-warning" onClick={Cart}>Add to Cart</button>
             </div>
             <br />
