@@ -16,6 +16,9 @@ function Buynow() {
     // Product quantity
     const [quantity, setquantity] = useState(1)
 
+    // State to track form validation errors
+    const [errors, setErrors] = useState({})
+
 
     useEffect(() => {
 
@@ -31,26 +34,51 @@ function Buynow() {
 
     // Increase quantity
     function increase() {
-
         setquantity(quantity + 1)
-
     }
 
 
     // Decrease quantity
     function decrease() {
-
         if (quantity > 1) {
             setquantity(quantity - 1)
         }
-
     }
 
 
     function generateBill() {
 
-        if (name === "" || email === "" || address === "" || phone === "") {
-            alert("Please enter Name, Email, Address and Phone Number")
+        let newErrors = {}
+
+        // Name Validation
+        if (name.trim() === "") {
+            newErrors.name = "You Must Fill The Details"
+        }
+
+        // Email Validation
+        if (email.trim() === "") {
+            newErrors.email = "You Must Fill The Details"
+        } else if (!email.includes("@")) {
+            newErrors.email = "Email must contain '@' symbol"
+        }
+
+        // Address Validation
+        if (address.trim() === "") {
+            newErrors.address = "You Must Fill The Details"
+        }
+
+        // Phone Validation
+        if (phone.trim() === "") {
+            newErrors.phone = "You Must Fill The Details"
+        } else if (phone.length !== 10) {
+            newErrors.phone = "Phone number must be exactly 10 digits"
+        }
+
+        // Set the error messages
+        setErrors(newErrors)
+
+        // Stop execution if there are any errors
+        if (Object.keys(newErrors).length > 0) {
             return
         }
 
@@ -185,8 +213,19 @@ function Buynow() {
                         className="form-control"
                         placeholder="Enter your name"
                         value={name}
-                        onChange={(e) => setname(e.target.value)}
+                        onChange={(e) => {
+                            setname(e.target.value)
+                            if (e.target.value.trim() !== "") {
+                                setErrors((prev) => ({ ...prev, name: "" }))
+                            }
+                        }}
                     />
+
+                    {errors.name && (
+                        <small className="text-danger fw-bold mt-1 d-block">
+                            {errors.name}
+                        </small>
+                    )}
 
                 </div>
 
@@ -204,8 +243,21 @@ function Buynow() {
                         className="form-control"
                         placeholder="Enter your email"
                         value={email}
-                        onChange={(e) => setemail(e.target.value)}
+                        onChange={(e) => {
+                            setemail(e.target.value)
+
+                            // Clear error instantly as soon as user types anything
+                            if (e.target.value.trim() !== "") {
+                                setErrors((prev) => ({ ...prev, email: "" }))
+                            }
+                        }}
                     />
+
+                    {errors.email && (
+                        <small className="text-danger fw-bold mt-1 d-block">
+                            {errors.email}
+                        </small>
+                    )}
 
                 </div>
 
@@ -223,8 +275,19 @@ function Buynow() {
                         placeholder="Enter your address"
                         rows="3"
                         value={address}
-                        onChange={(e) => setaddress(e.target.value)}
+                        onChange={(e) => {
+                            setaddress(e.target.value)
+                            if (e.target.value.trim() !== "") {
+                                setErrors((prev) => ({ ...prev, address: "" }))
+                            }
+                        }}
                     ></textarea>
+
+                    {errors.address && (
+                        <small className="text-danger fw-bold mt-1 d-block">
+                            {errors.address}
+                        </small>
+                    )}
 
                 </div>
 
@@ -241,9 +304,25 @@ function Buynow() {
                         type="text"
                         className="form-control"
                         placeholder="Enter your phone number"
+                        maxLength={10}
                         value={phone}
-                        onChange={(e) => setphone(e.target.value)}
+                        onChange={(e) => {
+                            // Only allow digits and restrict length to maximum 10 digits
+                            const val = e.target.value.replace(/\D/g, "").slice(0, 10)
+                            setphone(val)
+
+                            // Clear error instantly as soon as user types anything
+                            if (val.trim() !== "") {
+                                setErrors((prev) => ({ ...prev, phone: "" }))
+                            }
+                        }}
                     />
+
+                    {errors.phone && (
+                        <small className="text-danger fw-bold mt-1 d-block">
+                            {errors.phone}
+                        </small>
+                    )}
 
                 </div>
 

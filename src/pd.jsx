@@ -158,6 +158,17 @@
 //       "price": 30,
 //       "totalPrice": 30,
 //       "id": "K8vpKA8LnAc"
+//     },
+//     {
+//       "name": "eyw",
+//       "email": "ytytytytytytytytytytytytytytytyt@",
+//       "address": "y36",
+//       "phone": "5364764736",
+//       "productname": "🍦 Vanilla",
+//       "quantity": 1,
+//       "price": 30,
+//       "totalPrice": 30,
+//       "id": "aRchUbWtftk"
 //     }
 //   ],
 //   "$schema": "./node_modules/json-server/schema.json"
