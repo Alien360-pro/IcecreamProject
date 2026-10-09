@@ -89,9 +89,6 @@
 //       "quanity": "70ml",
 //       "price": "45rs",
 //       "img": "/products/ice12.jfif"
-//     },
-//     {
-//       "id": "xFyQPGd7Xzo"
 //     }
 //   ],
 //   "cart": [
@@ -101,6 +98,13 @@
 //       "quanity": "60ml",
 //       "price": "40rs",
 //       "img": "/products/ice9.jfif"
+//     },
+//     {
+//       "id": "r83cbpkoiyg",
+//       "productname": "🥜 Pista Cone",
+//       "quanity": "80ml",
+//       "price": "50rs",
+//       "img": "/products/ice3.jfif"
 //     }
 //   ],
 //   "signin": [

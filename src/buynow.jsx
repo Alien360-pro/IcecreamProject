@@ -116,7 +116,7 @@ function Buynow() {
     let totalPrice = price * quantity
 
 
-    return (
+    return <>
         <div className="container mt-5">
 
             <div className="card shadow p-4">
@@ -348,7 +348,7 @@ function Buynow() {
             </div>
 
         </div>
-    )
+    </>
 }
 
 export default Buynow
